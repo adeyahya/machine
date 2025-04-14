@@ -1,0 +1,17 @@
+clear
+ls
+ls -l
+clear
+cpu
+os
+os.cpu
+help
+sys
+sys host
+sys cpu
+clear
+sys cpu
+sys
+sys mem
+sys users
+exit
