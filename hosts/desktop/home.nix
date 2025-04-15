@@ -1,13 +1,11 @@
-{ lib, stable, pkgs, ... }:
-let
-  username = "adeyahya";
-in {
+{ lib, stable, pkgs, username, ... }:
+{
   fonts.fontconfig.enable = true;
 
   programs.git = {
     enable = true;
     userEmail = "adeyahyaprasetyo@gmail.com";
-    userName = "adeyahya";
+    userName = "${username}";
   };
   
   home = {
@@ -35,8 +33,8 @@ in {
     ];
 
     # This needs to actually be set to your username
-    username = "adeyahya";
-    homeDirectory = "/home/adeyahya";
+    username = "${username}";
+    homeDirectory = "/home/${username}";
 
     # You do not need to change this if you're reading this in the future.
     # Don't ever change this after the first build.  Don't ask questions.

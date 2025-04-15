@@ -5,9 +5,10 @@
     enable = true;
   };
 
-  users.users.adeyahya = {
+  users.defaultUserShell = pkgs.fish;
+  users.users.${username} = {
     isNormalUser = true;
-    description = "adeyahya";
+    description = "${username}";
     extraGroups = [ "networkmanager" "wheel" "kvm" "libvirtd" "docker"];
   };
 
