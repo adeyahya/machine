@@ -3,5 +3,7 @@
 .PHONY: update
 update:
 	home-manager switch --flake .#home
+desktop:
+	sudo nixos-rebuild switch --flake .#desktop
 clean:
 	nix-collect-garbage -d

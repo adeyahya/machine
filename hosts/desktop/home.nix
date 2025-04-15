@@ -3,31 +3,31 @@ let
   username = "adeyahya";
 in {
   fonts.fontconfig.enable = true;
+
+  programs.git = {
+    enable = true;
+    userEmail = "adeyahyaprasetyo@gmail.com";
+    userName = "adeyahya";
+  };
   
   home = {
     packages = with pkgs; [
       home-manager
       eza
       zellij
+      gnumake
 
-      fish
       tmux
-      nushell
 
-      tuckr
+      stow
       ripgrep
 
       helix
       neovim
       fastfetch
       btop
-      bitwarden-desktop
 
       volta
-
-      podman
-      podman-compose
-      podman-desktop
 
       # fonts
       cascadia-code
