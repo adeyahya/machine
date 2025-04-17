@@ -129,6 +129,7 @@ in
     fuse
     tailscale-systray
     solaar
+    distrobox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

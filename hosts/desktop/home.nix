@@ -39,6 +39,7 @@
 
       stow
       ripgrep
+      lazydocker
 
       devbox
 
