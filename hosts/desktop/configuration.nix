@@ -22,6 +22,11 @@ in
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.plymouth.enable = true;
+  boot.plymouth.theme = "bgrt";
+  boot.initrd.verbose = false;
+  boot.consoleLogLevel = 0;
+  boot.kernelParams = [ "quiet" "udev.log_level=0" ];
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -44,6 +49,7 @@ in
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.tailscale.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -96,8 +102,15 @@ in
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
+  # Running .appimage
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
   # Install firefox.
   programs.firefox.enable = true;
+  # Running dynamically linked executable like node from volta
+  programs.nix-ld.enable = true;
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -113,6 +126,9 @@ in
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    fuse
+    tailscale-systray
+    solaar
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -132,6 +148,7 @@ in
   hardware.graphics = {
     enable = true;
   };
+  hardware.logitech.wireless.enable = true;
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];

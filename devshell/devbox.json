@@ -1,0 +1,15 @@
+{
+  "packages": [
+    "postgresql_14",
+    "ruby@3.2.2",
+    "gcc",
+    "gnumake",
+    "pkg-config",
+    "zlib",
+    "libxml2@2.9.10",
+    "libxslt"
+  ],
+  "shell": {
+    "init_hook": "# Set up Ruby environment\nset -x PATH $PWD/.gem/ruby/bin $PATH\nset -x GEM_HOME $PWD/.gem/ruby\nset -x GEM_PATH $PWD/.gem/ruby\n\n# PG config\nset -x PG_CONFIG $POSTGRESQL_14/bin/pg_config\n\n# Force Nokogiri to use specific libxml2 version\nset -x NOKOGIRI_USE_SYSTEM_LIBRARIES true\nset -x XML2_CONFIG $LIBXML2_2_9_10/bin/xml2-config\nset -x XSLT_CONFIG $LIBXSLT/bin/xslt-config\n\n# Set compiler flags\nset -x CPPFLAGS \"-I$LIBXML2_2_9_10/include/libxml2 -I$LIBXSLT/include $CPPFLAGS\"\nset -x LDFLAGS \"-L$LIBXML2_2_9_10/lib -L$LIBXSLT/lib $LDFLAGS\"\nset -x PKG_CONFIG_PATH \"$LIBXML2_2_9_10/lib/pkgconfig:$LIBXSLT/lib/pkgconfig:$PKG_CONFIG_PATH\""
+  }
+}

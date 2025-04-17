@@ -1,4 +1,4 @@
-{ lib, stable, pkgs, username, ... }:
+{ lib, stable, pkgs, username, config, ... }:
 {
   fonts.fontconfig.enable = true;
 
@@ -6,8 +6,28 @@
     enable = true;
     userEmail = "adeyahyaprasetyo@gmail.com";
     userName = "${username}";
+
+    includes = [
+      {
+        condition = "gitdir:~/works/";
+        contents = {
+          user = {
+            email = "ade.prasetyo@jitera.com";
+            name = "adejit";
+          };
+        };
+      }
+    ];
+
+    ignores = [
+      ".devbox"
+      ".devbox_conf"
+      ".gem"
+      "devbox.json"
+      "devbox.lock"
+    ];
   };
-  
+ 
   home = {
     packages = with pkgs; [
       home-manager
@@ -19,6 +39,8 @@
 
       stow
       ripgrep
+
+      devbox
 
       helix
       neovim

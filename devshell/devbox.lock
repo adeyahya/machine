@@ -1,0 +1,178 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "gcc": {
+      "resolved": "github:NixOS/nixpkgs/18dd725c29603f582cf1900e0d25f9f1063dbf11?narHash=sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg%2FN38%3D#gcc",
+      "source": "nixpkg",
+      "systems": {
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "20241116",
+              "path": "/nix/store/8v6k283dpbc0qkdq81nb6mrxrgcb10i1-gcc-wrapper-14-20241116",
+              "default": true
+            },
+            {
+              "name": "20241116-man",
+              "path": "/nix/store/4ssb0cgvrgmpr2n97q8l305f43s28j85-gcc-wrapper-14-20241116-man",
+              "default": true
+            }
+          ]
+        }
+      }
+    },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "resolved": "github:NixOS/nixpkgs/18dd725c29603f582cf1900e0d25f9f1063dbf11?lastModified=1744536153&narHash=sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg%2FN38%3D"
+    },
+    "glibcLocales@latest": {
+      "last_modified": "2025-03-11T17:52:14Z",
+      "resolved": "github:NixOS/nixpkgs/0d534853a55b5d02a4ababa1d71921ce8f0aee4c#glibcLocales",
+      "source": "devbox-search",
+      "version": "2.40-66",
+      "systems": {
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/iv7avlnmk2cx79xpi4mr8sk1kxvlvm9l-glibc-locales-2.40-66",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/iv7avlnmk2cx79xpi4mr8sk1kxvlvm9l-glibc-locales-2.40-66"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hgybbbzg778wasmw5g1hzm7a8n4wwd5h-glibc-locales-2.40-66",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hgybbbzg778wasmw5g1hzm7a8n4wwd5h-glibc-locales-2.40-66"
+        }
+      }
+    },
+    "gnumake": {
+      "resolved": "github:NixOS/nixpkgs/18dd725c29603f582cf1900e0d25f9f1063dbf11?narHash=sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg%2FN38%3D#gnumake",
+      "source": "nixpkg",
+      "systems": {
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "path": "/nix/store/k0hhyz6qnj5065vpw15m4r7nbs0mn706-gnumake-4.4.1",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/y87b22iwv64wrfpgyii4gjgbhcfqq0mi-gnumake-4.4.1-man",
+              "default": true
+            }
+          ]
+        }
+      }
+    },
+    "libxml2@2.9.10": {
+      "last_modified": "2021-05-17T21:30:44Z",
+      "resolved": "github:NixOS/nixpkgs/3528c4151ee7c124f5a5cb1d01cb8d6a2dd8d62d#libxml2",
+      "source": "devbox-search",
+      "version": "2.9.10-bin"
+    },
+    "libxslt": {
+      "resolved": "github:NixOS/nixpkgs/18dd725c29603f582cf1900e0d25f9f1063dbf11?narHash=sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg%2FN38%3D#libxslt",
+      "source": "nixpkg"
+    },
+    "pkg-config": {
+      "resolved": "github:NixOS/nixpkgs/18dd725c29603f582cf1900e0d25f9f1063dbf11?narHash=sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg%2FN38%3D#pkg-config",
+      "source": "nixpkg",
+      "systems": {
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "path": "/nix/store/2ijmf0rg27gn78widiljfx9m7cfggjm0-pkg-config-wrapper-0.29.2",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/y4virh7sgyc57fvj8qxbbrzjn44nwrc1-pkg-config-wrapper-0.29.2-man",
+              "default": true
+            }
+          ]
+        }
+      }
+    },
+    "postgresql_14": {
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/18dd725c29603f582cf1900e0d25f9f1063dbf11?narHash=sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg%2FN38%3D#postgresql_14",
+      "source": "nixpkg"
+    },
+    "ruby@3.2.2": {
+      "last_modified": "2024-01-14T03:55:27Z",
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/dd5621df6dcb90122b50da5ec31c411a0de3e538#ruby_3_2",
+      "source": "devbox-search",
+      "version": "3.2.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/qr1qhf6x5k4j1apijs1hpml749ahz9fz-ruby-3.2.2",
+              "default": true
+            },
+            {
+              "name": "devdoc",
+              "path": "/nix/store/s8zpr6xz7sgf637mw8nxg3a50j3pr9qf-ruby-3.2.2-devdoc"
+            }
+          ],
+          "store_path": "/nix/store/qr1qhf6x5k4j1apijs1hpml749ahz9fz-ruby-3.2.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4j80nyc2rms2a5gb37qilmlvcn9id31i-ruby-3.2.2",
+              "default": true
+            },
+            {
+              "name": "devdoc",
+              "path": "/nix/store/6qcdxlds65xfcna29za7fyrsz49jf1h9-ruby-3.2.2-devdoc"
+            }
+          ],
+          "store_path": "/nix/store/4j80nyc2rms2a5gb37qilmlvcn9id31i-ruby-3.2.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/a4jd680azf2bsqfm09l3i1fz8zvwnmpj-ruby-3.2.2",
+              "default": true
+            },
+            {
+              "name": "devdoc",
+              "path": "/nix/store/a12akilsaymqb8p946364k1r8fayz1a2-ruby-3.2.2-devdoc"
+            }
+          ],
+          "store_path": "/nix/store/a4jd680azf2bsqfm09l3i1fz8zvwnmpj-ruby-3.2.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4mm3lyj1mmqx25diw044hciai541qcic-ruby-3.2.2",
+              "default": true
+            },
+            {
+              "name": "devdoc",
+              "path": "/nix/store/iz28ibg0gb3g5r149b34blnrap5jbr6n-ruby-3.2.2-devdoc"
+            }
+          ],
+          "store_path": "/nix/store/4mm3lyj1mmqx25diw044hciai541qcic-ruby-3.2.2"
+        }
+      }
+    },
+    "zlib": {
+      "resolved": "github:NixOS/nixpkgs/18dd725c29603f582cf1900e0d25f9f1063dbf11?narHash=sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg%2FN38%3D#zlib",
+      "source": "nixpkg"
+    }
+  }
+}
