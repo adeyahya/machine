@@ -51,6 +51,9 @@
       gnumake
 
       tmux
+      cowsay
+      fortune
+      pokemon-colorscripts-mac
 
       stow
       ripgrep
