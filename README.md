@@ -5,7 +5,10 @@ This repository contains my NixOS system configurations and dotfiles.
 ## Repository Structure
 
 - `modules/` - NixOS modules for system configuration
-  - `system/` - System-level configuration modules
+  - `base.nix` - Base system configuration
+  - `home.nix` - Home manager configuration
+  - `shell.nix` - Shell configuration
+  - `xremap.nix` - Keyboard remapping configuration
   - `README.md` - Documentation for module system
 - `hosts/` - Host-specific configurations
   - `desktop/` - Desktop machine configuration

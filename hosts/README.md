@@ -11,7 +11,7 @@ This directory contains host-specific NixOS configurations.
 
 Each host directory should contain:
 - `configuration.nix` - Main system configuration
-- `hardware-configuration.nix` - Hardware-specific configuration
+- `hardware.nix` - Hardware-specific configuration
 - `README.md` - Documentation specific to this host
 
 ## Adding a New Host

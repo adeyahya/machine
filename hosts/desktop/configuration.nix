@@ -12,7 +12,7 @@ in
       ./hardware.nix
       ./storage.nix
       ./gpu.nix
-      ../../modules/system/xremap.nix
+      ../../modules/xremap.nix
     ];
 
   # Bootloader.

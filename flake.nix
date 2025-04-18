@@ -37,7 +37,7 @@
 
           modules = [
             xremap.nixosModules.default
-            ./modules/system/base.nix
+            ./modules/base.nix
             ./hosts/${hostname}/configuration.nix
 
             home-manager.nixosModules.home-manager {
@@ -45,7 +45,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { inherit username nix-colors; };
-                users.${username} = import ./modules/system/home.nix;
+                users.${username} = import ./modules/home.nix;
               };
             }
           ] ++ extraModules;
