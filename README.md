@@ -6,23 +6,24 @@ This repository contains my NixOS system configurations and dotfiles.
 
 - `modules/` - NixOS modules for system configuration
   - `system/` - System-level configuration modules
-    - `base.nix` - Base system configuration
-  - `desktop/` - Desktop environment modules
-    - `desktop.nix` - Desktop environment configuration
-  - `services/` - Service-specific modules
-    - `xremap.nix` - Key remapping configuration (Caps Lock → Escape)
+  - `README.md` - Documentation for module system
 - `hosts/` - Host-specific configurations
   - `desktop/` - Desktop machine configuration
+  - `README.md` - Documentation for host configurations
 - `devshell/` - Development environment configuration
+  - `devbox.json` - Development environment dependencies
+  - `devbox.lock` - Locked dependencies
+- `.vscode/` - VSCode workspace configuration
 - `flake.nix` - Nix flake configuration
+- `flake.lock` - Locked flake dependencies
 - `Makefile` - Common commands and shortcuts
 
 ## Features
 
-- **Key Remapping**: Caps Lock is remapped to Escape using xremap
-- **Desktop Environment**: GNOME desktop environment
-- **Development Tools**: Various development tools and configurations
-- **Gaming Support**: Steam and gaming-related configurations
+- **System Configuration**: Modular NixOS configuration system
+- **Development Environment**: Managed development environment with devshell
+- **IDE Integration**: VSCode workspace configuration
+- **Host-Specific Configurations**: Separate configurations for different machines
 
 ## Usage
 
@@ -32,14 +33,3 @@ This repository contains my NixOS system configurations and dotfiles.
    ```bash
    sudo nixos-rebuild switch --flake .#<hostname>
    ```
-
-## Development
-
-To enter the development shell:
-```bash
-nix develop
-```
-
-## License
-
-MIT 
