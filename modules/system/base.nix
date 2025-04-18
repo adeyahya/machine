@@ -1,6 +1,10 @@
 { config, pkgs, username, ... }:
 
 {
+  imports = [
+    ./storage.nix
+  ];
+
   programs.fish = {
     enable = true;
   };

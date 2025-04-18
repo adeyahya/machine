@@ -31,18 +31,6 @@ in
     };
   };
 
-  fileSystems."/run/media/adeyahya/B8288F68288F250A" = {
-    device = "/dev/disk/by-uuid/B8288F68288F250A";
-    fsType = "ntfs";
-    options = ["defaults" "nofail"];
-  };
-
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = true;
-    package = pkgs.docker_28;
-  };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -223,5 +211,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
