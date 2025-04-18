@@ -9,27 +9,11 @@ in
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      # (import "${home-manager}/nixos")
+      ./hardware.nix
+      ./storage.nix
+      ./gpu.nix
+      ../../modules/system/xremap.nix
     ];
-
-  # Enable xremap for key remapping
-  services.xremap = {
-    enable = true;
-    serviceMode = "user";  # Run as user service
-    withGnome = true;     # Enable GNOME support
-    userName = "adeyahya"; # Specify the user to run the service
-    config = {
-      modmap = [
-        {
-          name = "CapsLock to Escape";
-          remap = {
-            CapsLock = "Esc";
-          };
-        }
-      ];
-    };
-  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -157,46 +141,7 @@ in
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
   hardware.logitech.wireless.enable = true;
-
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia-container-toolkit.enable = true;
-  hardware.nvidia = {
-
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-    # of just the bare essentials.
-    powerManagement.enable = false;
-
-    # Fine-grained power management. Turns off GPU when not in use.
-    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
-
-    # Use the NVidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
-    # Only available from driver 515.43.04+
-    open = false;
-
-    # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
-    nvidiaSettings = true;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

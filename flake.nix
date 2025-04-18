@@ -36,9 +36,8 @@
           };
 
           modules = [
-            ./modules/system/base.nix
             xremap.nixosModules.default
-
+            ./modules/system/base.nix
             ./hosts/${hostname}/configuration.nix
 
             home-manager.nixosModules.home-manager {
@@ -46,26 +45,19 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { inherit username nix-colors; };
-                users.${username} = import ./hosts/${hostname}/home.nix;
+                users.${username} = import ./modules/system/home.nix;
               };
             }
           ] ++ extraModules;
         };
     in {
-      # homeConfigurations = {
-      #   home = home-manager.lib.homeManagerConfiguration {
-      #     inherit pkgs;
-      #     modules = [ ./home.nix ];
-      #   };
-      # };
-      #
       nixosConfigurations = {
         desktop = mkSystem {
           system = "x86_64-linux";
           hostname = "desktop";
           extraModules = [
             nixos-hardware.nixosModules.common-cpu-amd
-            ./modules/desktop/desktop.nix
+            ./hosts/desktop/desktop.nix
           ];
         };
       };
