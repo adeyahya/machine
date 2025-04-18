@@ -17,9 +17,14 @@
     nix-colors = {
       url = "github:misterio77/nix-colors";
     };
+
+    xremap = {
+      url = "github:xremap/nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, nix-colors, ... }:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, nix-colors, xremap, ... }:
     let
       username = "adeyahya";
 
@@ -31,7 +36,8 @@
           };
 
           modules = [
-            ./modules/base.nix
+            ./modules/system/base.nix
+            xremap.nixosModules.default
 
             ./hosts/${hostname}/configuration.nix
 
@@ -59,8 +65,7 @@
           hostname = "desktop";
           extraModules = [
             nixos-hardware.nixosModules.common-cpu-amd
-            ./modules/desktop.nix
-            # ./modules/gaming.nix
+            ./modules/desktop/desktop.nix
           ];
         };
       };
