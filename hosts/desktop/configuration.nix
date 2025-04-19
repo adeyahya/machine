@@ -126,6 +126,8 @@ in
     tailscale-systray
     solaar
     distrobox
+    python3Full
+    python3Packages.setuptools
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

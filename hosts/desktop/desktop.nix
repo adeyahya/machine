@@ -8,5 +8,6 @@
     brave
     alacritty
     kitty
+    zed-editor-fhs
   ];
 }
