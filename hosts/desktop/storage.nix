@@ -31,6 +31,7 @@
     enable = true;
     enableOnBoot = true;
     package = pkgs.docker_28;
+    extraOptions = "--data-root /home/docker";
   };
 
   # No swap devices configured
