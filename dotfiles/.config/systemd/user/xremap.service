@@ -1,0 +1,10 @@
+[Unit]
+Description=xremap key remapping service
+After=display-manager.service
+
+[Service]
+ExecStart=/usr/bin/xremap /home/adeyahya/.config/xremap/config.yml
+Restart=always
+
+[Install]
+WantedBy=default.target
