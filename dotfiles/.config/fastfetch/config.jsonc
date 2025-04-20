@@ -10,7 +10,7 @@
     "modules": [
         {
             "type": "command",
-            "text": "pokemon-colorscripts  -r",
+            "text": "pokemon-colorscripts -r --no-title",
             "key": "\n"
         },
         {
